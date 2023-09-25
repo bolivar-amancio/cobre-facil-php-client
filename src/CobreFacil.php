@@ -6,6 +6,7 @@ use CobreFacil\Resources\Authentication;
 use CobreFacil\Resources\Card;
 use CobreFacil\Resources\Customer;
 use CobreFacil\Resources\Invoice;
+use CobreFacil\Resources\Subscription;
 use Exception;
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -141,5 +142,13 @@ class CobreFacil
     public function invoice(): Invoice
     {
         return new Invoice($this->getHttpClient(), $this->getValidToken());
+    }
+
+    /**
+     * @throws Exceptions\ResourceException
+     */
+    public function subscription(): Subscription
+    {
+        return new Subscription($this->getHttpClient(), $this->getValidToken());
     }
 }
