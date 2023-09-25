@@ -10,4 +10,7 @@
             <directory>./src</directory>
         </whitelist>
     </filter>
+    <testsuite name="All">
+        <directory suffix=".php">./tests/Resources</directory>
+    </testsuite>
 </phpunit>
